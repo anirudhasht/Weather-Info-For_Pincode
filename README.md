@@ -8,7 +8,7 @@ A Spring Boot backend application that fetches real-time weather information usi
 ✅ External Weather API integration
 ✅ Stores weather data in PostgreSQL
 ✅ Clean layered architecture (Controller → Service → Client → Repository)
-✅ Environment variable based configuration (secure)
+✅ Environment variable–based configuration (secure)
 ✅ RESTful API design
 
 🧱 Tech Stack
@@ -64,7 +64,7 @@ Create database:
 weather_db
 
 
-Update properties if required:
+Update properties if required inside:
 
 src/main/resources/application.properties
 
@@ -86,43 +86,50 @@ http://localhost:8086
 
 📡 API Endpoints
 🌍 Get Weather By Pincode
-POST   /api/getWeather
+POST /api/getWeather
 
-
-Example Request:
-
+Example Request
 {
   "pinCode": "560085",
   "forDate": "2025-03-12T10:00:00"
 }
 
-
-Example Response:
-
+Example Response
 {
-    "id": 8,
-    "pinCode": "560085",
-    "forDate": "2025-03-12T10:00:00",
-    "temp": 295.43,
-    "humidity": 63.0,
-    "windSpeed": 3.6,
-    "condition": "Clear",
-    "description": "clear sky",
-    "fetchedAt": "2026-02-13T22:55:29.1657424"
+  "id": 8,
+  "pinCode": "560085",
+  "forDate": "2025-03-12T10:00:00",
+  "temp": 295.43,
+  "humidity": 63.0,
+  "windSpeed": 3.6,
+  "condition": "Clear",
+  "description": "clear sky",
+  "fetchedAt": "2026-02-13T22:55:29.1657424"
 }
-
 
 🧪 Running Tests
 mvn test
 
-Environment variables used:
-
+🔐 Environment Variables Used
 DB_PASSWORD
 WEATHER_API_KEY
 
 📄 Postman API Documentation
-    https://documenter.getpostman.com/view/43458909/2sBXcBnhGh
+
+Interactive API documentation is available here:
+
+👉 https://documenter.getpostman.com/view/43458909/2sBXcBnhGh
+
+Includes:
+
+Ready-to-use requests
+
+Example responses
+
+Endpoint descriptions
 
 👨‍💻 Author
+
 Anirudh Ashrit
+
 GitHub: https://github.com/anirudhasht

@@ -1,6 +1,6 @@
 🌦️ Weather Info For Pincode API
 
-A Spring Boot backend application that fetches real-time weather information using Indian pincodes, integrates with an external weather API, stores results in PostgreSQL, and exposes clean REST endpoints for accessing weather data.
+A Spring Boot backend application that fetches real-time weather information using Indian pincodes, integrates with an external weather API, stores results in PostgreSQL, and exposes clean REST endpoints.
 
 📌 Features
 
@@ -122,7 +122,7 @@ WEATHER_API_KEY
 
 📄 Postman API Documentation
 
-Interactive API documentation is available here:
+Interactive API documentation:
 
 👉 https://documenter.getpostman.com/view/43458909/2sBXcBnhGh
 

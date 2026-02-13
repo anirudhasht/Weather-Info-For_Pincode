@@ -5,10 +5,16 @@ A Spring Boot backend application that fetches real-time weather information usi
 📌 Features
 
 ✅ Get weather details using pincode-based search
+
 ✅ External Weather API integration
+
 ✅ Stores weather data in PostgreSQL
-✅ Clean layered architecture (Controller → Service → Client → Repository)
+
+✅ Clean layered architecture
+(Controller → Service → Client → Repository)
+
 ✅ Environment variable–based configuration (secure)
+
 ✅ RESTful API design
 
 🧱 Tech Stack

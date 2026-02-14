@@ -28,8 +28,11 @@ public class WeatherDataService {
         this.client=client;
     }
     public WeatherData getWeatherData(WeatherRequestDTO dto) {
-        if (weatherDataRepo.existsByPinCode(dto.getPinCode())) {
-            return weatherDataRepo.findByPinCode(dto.getPinCode());
+        if (dto.getForDate() != null && dto.getForDate().isAfter(LocalDateTime.now())) {
+            throw new IllegalArgumentException("Future Date Entered!!");
+        }
+        if (weatherDataRepo.existsByPinCodeAndForDate(dto.getPinCode(), dto.getForDate())) {
+            return weatherDataRepo.findByPinCodeAndForDate(dto.getPinCode(), dto.getForDate());
         }
         PinCodeLocation latNLon = pinService.getLatLan(dto.getPinCode());
 
@@ -38,6 +41,7 @@ public class WeatherDataService {
         WeatherData data = client.fetchWeather(lat, lon);
         data.setPinCode(dto.getPinCode());
         if(dto.getForDate()!=null) {
+
             data.setForDate(dto.getForDate());
         }
         data.setFetchedAt(LocalDateTime.now());

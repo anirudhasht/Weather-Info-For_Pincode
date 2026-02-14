@@ -1,21 +1,18 @@
 🌦️ Weather Info For Pincode API
 
-A Spring Boot backend application that fetches real-time weather information using Indian pincodes, integrates with an external weather API, stores results in PostgreSQL, and exposes clean REST endpoints.
+A Spring Boot backend application that fetches real-time weather information using Indian pincodes, converts pincode to geo-coordinates, integrates with an external Weather API, stores results in PostgreSQL, and exposes REST APIs for querying weather data.
 
 📌 Features
 
-✅ Get weather details using pincode-based search
-
+✅ Fetch weather data using Indian Pincode
 ✅ External Weather API integration
-
-✅ Stores weather data in PostgreSQL
-
-✅ Clean layered architecture
-(Controller → Service → Client → Repository)
-
-✅ Environment variable–based configuration (secure)
-
-✅ RESTful API design
+✅ Convert Pincode → Latitude/Longitude
+✅ Store weather data in PostgreSQL database
+✅ Clean layered architecture (Controller → Service → Client → Repository)
+✅ Optimized API usage (Avoid unnecessary external calls)
+✅ Environment variable based secrets (secure)
+✅ Unit Testing with Mockito & JUnit
+✅ Postman API Collection ready
 
 🧱 Tech Stack
 
@@ -29,17 +26,17 @@ PostgreSQL
 
 Maven
 
-External Weather API
+OpenWeather API
 
-REST APIs
+JUnit + Mockito
 
 📂 Project Structure
 controller/
 service/
+client/
 repository/
 entity/
 dto/
-client/
 config/
 
 ⚙️ Setup Instructions
@@ -70,7 +67,7 @@ Create database:
 weather_db
 
 
-Update properties if required inside:
+Update configuration if needed:
 
 src/main/resources/application.properties
 
@@ -81,12 +78,12 @@ Using Maven:
 mvn spring-boot:run
 
 
-OR run directly from IDE:
+OR run from IDE:
 
 WeatherInfoForPincodeApplication.java
 
 
-Server starts at:
+Server runs at:
 
 http://localhost:8086
 
@@ -94,13 +91,17 @@ http://localhost:8086
 🌍 Get Weather By Pincode
 POST /api/getWeather
 
-Example Request
+
+Example Request:
+
 {
   "pinCode": "560085",
   "forDate": "2025-03-12T10:00:00"
 }
 
-Example Response
+
+Example Response:
+
 {
   "id": 8,
   "pinCode": "560085",
@@ -116,23 +117,27 @@ Example Response
 🧪 Running Tests
 mvn test
 
-🔐 Environment Variables Used
-DB_PASSWORD
-WEATHER_API_KEY
-
-📄 Postman API Documentation
-
-Interactive API documentation:
-
-👉 https://documenter.getpostman.com/view/43458909/2sBXcBnhGh
 
 Includes:
 
-Ready-to-use requests
+Service layer unit tests
 
-Example responses
+Mocked external API validation
 
-Endpoint descriptions
+Optimized API call verification
+
+🔐 Security Notes
+
+Secrets are NOT stored in repository.
+
+Environment variables used:
+
+DB_PASSWORD
+WEATHER_API_KEY
+
+📄 Postman Documentation
+
+👉 https://documenter.getpostman.com/view/43458909/2sBXcBnhGh
 
 👨‍💻 Author
 

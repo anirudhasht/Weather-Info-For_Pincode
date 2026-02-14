@@ -1,4 +1,4 @@
-🌦️ Weather Info For Pincode API
+# 🌤️ Weather Info For Pincode API
 
 A Spring Boot backend application that fetches real-time weather information using Indian pincodes, converts pincode to geo-coordinates, integrates with an external Weather API, stores results in PostgreSQL, and exposes REST APIs for querying weather data.
 

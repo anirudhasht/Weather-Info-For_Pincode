@@ -136,7 +136,11 @@ Example Response
   "description": "clear sky",
   "fetchedAt": "2026-02-13T22:55:29.1657424"
 }
-🧪 Running Tests
+---
+
+## 🧪 Running Tests
+
+```bash
 mvn test
 Includes:
 

@@ -134,33 +134,46 @@ Example Response
   "windSpeed": 3.6,
   "condition": "Clear",
   "description": "clear sky",
-  "fetchedAt": "2026-02-13T22:55:29.1657424"
+   "fetchedAt": "2026-02-13T22:55:29.1657424"
 }
+```
+
 ---
 
 ## 🧪 Running Tests
 
 ```bash
 mvn test
-Includes:
+```
 
-Service layer unit tests
+**Includes:**
 
-Mocked external API validation
+- Service layer unit tests
+- Mocked external API validation
+- Optimized API call verification
 
-Optimized API call verification
+---
 
-🔐 Security Notes
-Secrets are NOT stored in repository.
+## 🔐 Security Notes
+
+Secrets are **NOT** stored in repository.
 
 Environment variables used:
 
+```
 DB_PASSWORD
 WEATHER_API_KEY
-📄 Postman API Documentation
+```
+
+---
+
+## 📄 Postman API Documentation
+
 👉 https://documenter.getpostman.com/view/43458909/2sBXcBnhGh
 
-👨‍💻 Author
-Anirudh Ashrit
-GitHub: https://github.com/anirudhasht
+---
 
+## 👨‍💻 Author
+
+Anirudh Ashrit  
+GitHub: https://github.com/anirudhasht

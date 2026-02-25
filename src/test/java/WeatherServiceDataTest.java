@@ -13,6 +13,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 
 @ExtendWith(MockitoExtension.class)
 public class WeatherServiceDataTest {
@@ -41,8 +43,16 @@ public class WeatherServiceDataTest {
         existingData.setTemp(296.71);
 
 
-        when(weatherDataRepo.existsByPinCode(pin)).thenReturn(true);
-        when(weatherDataRepo.findByPinCode(pin)).thenReturn(existingData);
+        // when(weatherDataRepo.existsByPinCode(pin)).thenReturn(true);
+        // when(weatherDataRepo.findByPinCode(pin)).thenReturn(existingData);
+        
+
+       when(weatherDataRepo.existsByPinCodeAndForDate(eq(pin), any()))
+        .thenReturn(true);
+
+      when(weatherDataRepo.findByPinCodeAndForDate(eq(pin), any()))
+        .thenReturn(existingData);
+        
 
 
         WeatherData result = weatherDataService.getWeatherData(dto);
